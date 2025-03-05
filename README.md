@@ -51,3 +51,17 @@ Se espera lograr la detección de armas mayor al 50% en un ambiente controlado y
 - Evaluar el software desarrollado.
 - Revisar y refinar el software según sea necesario.
 - Planificar la siguiente iteración del proyecto.
+
+### Diagrama de metodologia
+
+[![Metodologia Espiral](./UK-spiral-model.png)](.UK-spiral-model.png)
+
+## Diagramas del proyecto
+### Diagrama de base de datos
+[![Diagrama de base de datos](./DiagramaDeBaseDeDatos.png)](./DiagramaDeBaseDeDatos.png)
+
+### Diagrama de componentes
+[![Diagrama de componentes](./DiagramaDeComponentes.png)](./DiagramaDeComponentes.png)
+
+### Diagrama de clases
+[![Diagrama de clases](./DiagramaDeClases.png)](./DiagramaDeClases.png)
