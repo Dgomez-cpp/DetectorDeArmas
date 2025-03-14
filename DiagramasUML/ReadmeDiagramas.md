@@ -12,5 +12,5 @@
 ### Diagrama de base de datos
 [![Diagrama de base de datos](./DiagramaBaseDatos.png)](./DiagramaBaseDatos.png)
 
-#### Script de la base de datos
-[[Enlace a Script de la base de datos]](./ScriptDataBase.txt)
+#### Apartado de base de datos
+[[Enlace para ir a el apartado de la base de datos]](https://github.com/Dgomez-cpp/DetectorDeArmas/tree/main/BaseDeDatos)
