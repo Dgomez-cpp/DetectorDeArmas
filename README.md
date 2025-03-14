@@ -62,5 +62,5 @@ Se espera lograr la detección de armas mayor al 50% en un ambiente controlado y
 ## Kanban
 [Ver Kanban del Proyecto](https://github.com/users/Dgomez-cpp/projects/3)
 
-##Referencias
+## Referencias
 [Ver dataset](https://universe.roboflow.com/yolov7test-u13vc/weapon-detection-m7qso)
