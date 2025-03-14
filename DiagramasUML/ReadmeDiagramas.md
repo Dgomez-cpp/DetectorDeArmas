@@ -11,3 +11,5 @@
 ### Diagrama de casos de uso
 [![Diagrama de casos de uso](./DiagramaCasosUso.png)](./DiagramaCasosUso.png)
 
+### Script de la base de datos
+[[Enlace a Script de la base de datos](./ScriptDataBase.txt)]
