@@ -1,0 +1,92 @@
+// Usar o crear la base de datos "DeteccionArmas"
+use DeteccionArmas;
+
+// Crear la colección "TiposDeArmas"
+db.TiposDeArmas.insertMany([
+    {
+        _id: 1,
+        Nombre: "Pistola",
+        Descripcion: "Arma de fuego corta, usualmente de una sola mano."
+    },
+    {
+        _id: 2,
+        Nombre: "Rifle",
+        Descripcion: "Arma de fuego larga, diseñada para mayor alcance."
+    },
+    {
+        _id: 3,
+        Nombre: "Cuchillo",
+        Descripcion: "Arma blanca de corto alcance."
+    }
+]);
+
+// Crear la colección "Imagenes" e insertar datos de ejemplo
+db.Imagenes.insertMany([
+    {
+        _id: 1,
+        RutaArchivo: "/imagenes/deteccion1.jpg",
+        FechaGuardado: new Date("2025-03-14T10:00:00Z")
+    },
+    {
+        _id: 2,
+        RutaArchivo: "/imagenes/deteccion2.jpg",
+        FechaGuardado: new Date("2025-03-14T10:05:00Z")
+    }
+]);
+
+// Crear la colección "ArmasDetectadas" e insertar datos de ejemplo
+db.ArmasDetectadas.insertMany([
+    {
+        _id: 1,
+        TipoArma: 1, // Referencia al ID de "Pistola" en TiposDeArmas
+        Fecha: new Date("2025-03-14"),
+        Hora: "10:00:00",
+        Imagen: 1 // Referencia al ID de la imagen en Imagenes
+    },
+    {
+        _id: 2,
+        TipoArma: 2, // Referencia al ID de "Rifle" en TiposDeArmas
+        Fecha: new Date("2025-03-14"),
+        Hora: "10:05:00",
+        Imagen: 2 // Referencia al ID de la imagen en Imagenes
+    }
+]);
+
+// (Opcional) Crear un índice para mejorar las consultas por Fecha en ArmasDetectadas
+db.ArmasDetectadas.createIndex({ Fecha: 1 });
+
+// Ejemplo de consulta para generar un "Reporte" (detecciones con detalles del tipo de arma e imagen)
+db.ArmasDetectadas.aggregate([
+    {
+        $lookup: {
+            from: "TiposDeArmas",
+            localField: "TipoArma",
+            foreignField: "_id",
+            as: "TipoArmaDetalles"
+        }
+    },
+    {
+        $lookup: {
+            from: "Imagenes",
+            localField: "Imagen",
+            foreignField: "_id",
+            as: "ImagenDetalles"
+        }
+    },
+    {
+        $unwind: "$TipoArmaDetalles"
+    },
+    {
+        $unwind: "$ImagenDetalles"
+    },
+    {
+        $project: {
+            _id: 1,
+            Fecha: 1,
+            Hora: 1,
+            "TipoArmaNombre": "$TipoArmaDetalles.Nombre",
+            "ImagenRuta": "$ImagenDetalles.RutaArchivo",
+            "ImagenFechaGuardado": "$ImagenDetalles.FechaGuardado"
+        }
+    }
+]);
