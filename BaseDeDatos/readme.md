@@ -6,4 +6,4 @@ MongoDB fue utilizado principalmente por su flexibilidad y escalabilidad como ba
 [![Diagrama de base de datos](./DiagramaBaseDatos.png)](./DiagramaBaseDatos.png)
 
 #### Script de la base de datos
-[[Enlace a Script de la base de datos]](./ScriptDataBase.txt)
+[[Enlace a Script de la base de datos]](./scriptDataBase.txt)
