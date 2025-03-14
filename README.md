@@ -58,3 +58,6 @@ Se espera lograr la detección de armas mayor al 50% en un ambiente controlado y
 
 ## Diagramas del proyecto
 [[Enlace a diagramas]](./DiagramasUML/ReadmeDiagramas.md)
+
+## Kanban
+[Ver Kanban del Proyecto](https://github.com/users/Dgomez-cpp/projects/3)
