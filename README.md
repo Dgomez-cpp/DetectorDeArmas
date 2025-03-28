@@ -80,7 +80,7 @@ Cada ciclo incluye una iteración de desarrollo, pruebas y retroalimentación, p
 
 ## Base de datos
 
-[Apartado de base de datos](https://github.com/Dgomez-cpp/DetectorDeArmas/tree/main/Diagramas)
+[Apartado de base de datos](https://github.com/Dgomez-cpp/DetectorDeArmas/tree/main/BaseDeDatos)
 
 ## Instrucciones de Uso
 1. Clonar el repositorio: `git clone https://github.com/Dgomez-cpp/DetectorDeArmas.git`
@@ -88,6 +88,13 @@ Cada ciclo incluye una iteración de desarrollo, pruebas y retroalimentación, p
 3. Descargar el dataset: `python Codigo/download_dataset.py`.
 4. Entrenar el modelo: `python Codigo/train.py`.
 5. Ejecutar la detección: `python Codigo/detect.py`.
+
+## Referencias
+
+- Data set
+  [Roboflow (weapon-detection Computer Vision Project)](https://universe.roboflow.com/yolov7test-u13vc/weapon-detection-m7qso)
+- Imagen Metodologia de espiral
+  [Metodologia de espiral (Imagen)](https://intelequia.com/Portals/0/Blog/Images/modelo%20en%20espiral.jpg?ver=mzH0oeOpJ2T7ug8UglTUEw==)
 
 ## Contribuciones
 Las contribuciones son bienvenidas. Por favor, abre un issue o envía un pull request con tus mejoras.
