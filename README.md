@@ -68,7 +68,19 @@ El desarrollo del proyecto sigue la metodología en espiral, que combina iteraci
 
 Cada ciclo incluye una iteración de desarrollo, pruebas y retroalimentación, permitiendo mejoras continuas mientras se mitigan riesgos técnicos.
 
+### Diagrama de metodologia de espiral
+
+![Diagrama de metodologia de espiral](images/spiral_image.jpg)
+
 ---
+
+## Diagramas del proyecto
+
+[Apartado de diagramas](https://github.com/Dgomez-cpp/DetectorDeArmas/tree/main/Diagramas)
+
+## Base de datos
+
+[Apartado de base de datos](https://github.com/Dgomez-cpp/DetectorDeArmas/tree/main/Diagramas)
 
 ## Instrucciones de Uso
 1. Clonar el repositorio: `git clone https://github.com/Dgomez-cpp/DetectorDeArmas.git`
