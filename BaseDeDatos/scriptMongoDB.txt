@@ -1,0 +1,166 @@
+// Database: weapon_detection_system
+
+// Collection: weapon_types
+db.createCollection("weapon_types", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["name", "description"],
+      properties: {
+        name: {
+          bsonType: "string",
+          description: "Name of the weapon type (e.g., Pistol, Rifle)"
+        },
+        description: {
+          bsonType: "string",
+          description: "Detailed description of the weapon type"
+        },
+        detection_threshold: {
+          bsonType: "double",
+          description: "Confidence threshold for this weapon type",
+          minimum: 0,
+          maximum: 1
+        },
+        is_active: {
+          bsonType: "bool",
+          description: "Whether this weapon type is actively monitored"
+        },
+        created_at: {
+          bsonType: "date",
+          description: "When this weapon type was added to the system"
+        }
+      }
+    }
+  }
+});
+
+// Collection: images
+db.createCollection("images", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["file_path", "saved_at"],
+      properties: {
+        file_path: {
+          bsonType: "string",
+          description: "Path to the stored image file"
+        },
+        saved_at: {
+          bsonType: "date",
+          description: "When the image was saved"
+        },
+        source: {
+          bsonType: "string",
+          description: "Source of the image (webcam, upload, etc.)"
+        },
+        resolution: {
+          bsonType: "object",
+          properties: {
+            width: { bsonType: "int" },
+            height: { bsonType: "int" }
+          }
+        },
+        metadata: {
+          bsonType: "object",
+          description: "Additional image metadata"
+        }
+      }
+    }
+  }
+});
+
+// Collection: detections
+db.createCollection("detections", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["weapon_type_id", "image_id", "detected_at", "confidence"],
+      properties: {
+        weapon_type_id: {
+          bsonType: "objectId",
+          description: "Reference to weapon_types collection"
+        },
+        image_id: {
+          bsonType: "objectId",
+          description: "Reference to images collection"
+        },
+        detected_at: {
+          bsonType: "date",
+          description: "Timestamp of detection"
+        },
+        confidence: {
+          bsonType: "double",
+          description: "Confidence score of detection (0-1)",
+          minimum: 0,
+          maximum: 1
+        },
+        bounding_box: {
+          bsonType: "object",
+          properties: {
+            x: { bsonType: "int" },
+            y: { bsonType: "int" },
+            width: { bsonType: "int" },
+            height: { bsonType: "int" }
+          },
+          description: "Coordinates of detected weapon"
+        },
+        frame_number: {
+          bsonType: "int",
+          description: "Frame number in video sequence"
+        },
+        camera_id: {
+          bsonType: "string",
+          description: "Identifier for camera source"
+        },
+        is_alert_sent: {
+          bsonType: "bool",
+          description: "Whether an alert was triggered for this detection"
+        }
+      }
+    }
+  }
+});
+
+// Collection: system_metrics
+db.createCollection("system_metrics", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["timestamp", "fps", "detection_count"],
+      properties: {
+        timestamp: {
+          bsonType: "date",
+          description: "Time of metric collection"
+        },
+        fps: {
+          bsonType: "double",
+          description: "Frames processed per second"
+        },
+        detection_count: {
+          bsonType: "int",
+          description: "Number of detections in this period"
+        },
+        memory_usage: {
+          bsonType: "double",
+          description: "Memory usage in MB"
+        },
+        cpu_usage: {
+          bsonType: "double",
+          description: "CPU usage percentage"
+        },
+        gpu_usage: {
+          bsonType: "double",
+          description: "GPU usage percentage (if available)"
+        }
+      }
+    }
+  }
+});
+
+// Create indexes for better performance
+db.weapon_types.createIndex({ name: 1 }, { unique: true });
+db.images.createIndex({ saved_at: -1 });
+db.detections.createIndex({ detected_at: -1 });
+db.detections.createIndex({ weapon_type_id: 1 });
+db.detections.createIndex({ confidence: -1 });
+db.system_metrics.createIndex({ timestamp: -1 });
