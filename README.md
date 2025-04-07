@@ -85,7 +85,7 @@ Cada ciclo incluye una iteración de desarrollo, pruebas y retroalimentación, p
 ## Instrucciones de Uso
 1. Clonar el repositorio: `git clone https://github.com/Dgomez-cpp/DetectorDeArmas.git`
 2. Instalar dependencias: `pip install -r requirements.txt` (pendiente de crear).
-3. Descargar el dataset: `python Codigo/download_dataset.py`.
+3. Descargar el dataset: `python Codigo/download_dataset.py`.(pendiente de crear)
 4. Entrenar el modelo: `python Codigo/train.py`.
 5. Ejecutar la detección: `python Codigo/detect.py`.
 
