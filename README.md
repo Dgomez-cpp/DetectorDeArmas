@@ -95,7 +95,7 @@ https://github.com/Dgomez-cpp/DetectorDeArmas/blob/0cfa2447ea146a05c68e1d29c0f21
 
 ## Pruebas de Funcionalidad
 
-https://github.com/Dgomez-cpp/DetectorDeArmas/blob/0cfa2447ea146a05c68e1d29c0f21a14faf27203/Pruebas_Funcionales.pdf
+Pruebas_Funcionales.pdf
 
 ## Referencias
 
