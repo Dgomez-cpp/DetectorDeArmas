@@ -89,10 +89,12 @@ Cada ciclo incluye una iteración de desarrollo, pruebas y retroalimentación, p
 4. Entrenar el modelo: `python Codigo/train.py`.
 5. Ejecutar la detección: `python Codigo/detect.py`.
 
-##Pruebas de Usuabilidad 
+##Pruebas de Usuabilidad
+
 https://github.com/Dgomez-cpp/DetectorDeArmas/blob/0cfa2447ea146a05c68e1d29c0f21a14faf27203/PRUEBA_USABILIDAD.pdf
 
 #Pruebas de Funcionalidad
+
 https://github.com/Dgomez-cpp/DetectorDeArmas/blob/0cfa2447ea146a05c68e1d29c0f21a14faf27203/Pruebas_Funcionales.pdf
 
 ## Referencias
