@@ -90,12 +90,10 @@ Cada ciclo incluye una iteración de desarrollo, pruebas y retroalimentación, p
 5. Ejecutar la detección: `python Codigo/detect.py`.
 
 ## Pruebas de Usuabilidad
-
 https://github.com/Dgomez-cpp/DetectorDeArmas/blob/0cfa2447ea146a05c68e1d29c0f21a14faf27203/PRUEBA_USABILIDAD.pdf
 
 ## Pruebas de Funcionalidad
-
-Pruebas_Funcionales.pdf
+https://github.com/Dgomez-cpp/DetectorDeArmas/blob/0cfa2447ea146a05c68e1d29c0f21a14faf27203/Pruebas_Funcionales.pdf
 
 ## Referencias
 
